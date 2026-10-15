@@ -1,10 +1,25 @@
-# OS / editor
+# ---- OS / editor ----
 .DS_Store
 Thumbs.db
+desktop.ini
 .vscode/
 .idea/
+*.swp
 
-# Jangan pernah commit file berisi API key / rahasia
+# ---- Node (kalau pakai npx serve, dsb.) ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ---- Build / cache ----
+dist/
+.cache/
+
+# ---- RAHASIA — jangan pernah di-commit ----
 .env
 *.env
 secrets.json
+*.key
+

@@ -1,7 +1,8 @@
 /* ============================================
    SIAPIK — js/chatbot.js
-   Chatbot AI beneran via Groq API (Llama 3.1 8B).
+   Chatbot AI via Groq API (Llama 3.1 8B).
    API key diambil dari localStorage — JANGAN hardcode di kode!
+   Key disembunyikan setelah tersimpan ("API Key Groq tersimpan" + tombol Ganti).
    ============================================ */
 
 const GROQ_URL   = 'https://api.groq.com/openai/v1/chat/completions';
@@ -35,25 +36,56 @@ async function loadChips() {
   }
 }
 
-// knowledge.json tetap dipakai buat chip pertanyaan cepat (bukan jawaban)
-function initChatbot() {
-  const form    = document.getElementById('form-chat');
-  const log     = document.getElementById('chat-log');
-  const keyInput = document.getElementById('groq-key');
-  if (!form) return;
 
-  // Muat key yang tersimpan (kalau ada)
-  const saved = localStorage.getItem(KEY_STORAGE);
-  if (saved && keyInput) keyInput.value = saved;
+/* ---- UI kolom API key: dua keadaan ----
+   KEADAAN A (belum ada key): tampilkan kolom input.
+   KEADAAN B (sudah ada key): tampilkan "API Key Groq tersimpan" + tombol Ganti. */
+function tampilkanKolomKey() {   // -> KEADAAN A
+  document.getElementById('key-form').hidden = false;
+  document.getElementById('key-saved').hidden = true;
+}
 
-  // Simpan key saat diubah
-  if (keyInput) {
-    keyInput.addEventListener('change', () => {
-      const v = keyInput.value.trim();
-      if (v) localStorage.setItem(KEY_STORAGE, v);
-      else   localStorage.removeItem(KEY_STORAGE);
+function tampilkanKeyTersimpan() {   // -> KEADAAN B
+  document.getElementById('key-form').hidden = true;
+  document.getElementById('key-saved').hidden = false;
+}
+
+function initKeyUI() {
+  const input = document.getElementById('groq-key');
+  const btnGanti = document.getElementById('btn-ganti-key');
+  if (!input) return;
+
+  // Saat halaman dibuka: key ada? -> KEADAAN B : KEADAAN A
+  if ((localStorage.getItem(KEY_STORAGE) || '').trim()) tampilkanKeyTersimpan();
+  else tampilkanKolomKey();
+
+  // Simpan key saat user pindah dari kolom (event change)
+  input.addEventListener('change', () => {
+    const v = input.value.trim();
+    if (v) {
+      localStorage.setItem(KEY_STORAGE, v);
+      tampilkanKeyTersimpan();      // sembunyikan kolom, tampilkan "tersimpan"
+    } else {
+      localStorage.removeItem(KEY_STORAGE);
+      tampilkanKolomKey();          // key dikosongkan -> balik ke input
+    }
+  });
+
+  // Tombol "Ganti" -> buka kolom input lagi (key lama TIDAK langsung dihapus)
+  if (btnGanti) {
+    btnGanti.addEventListener('click', () => {
+      input.value = '';             // kosongkan biar user bisa ketik baru
+      tampilkanKolomKey();
+      input.focus();
     });
   }
+}
+
+function initChatbot() {
+  const form = document.getElementById('form-chat');
+  if (!form) return;
+
+  initKeyUI();
 
   // Submit form
   form.addEventListener('submit', (e) => {
@@ -78,6 +110,7 @@ async function kirimPesan(text) {
   if (!key) {
     appendChat('bot', 'Kamu belum mengisi API Key Groq. Isi dulu di kolom atas ya (gratis di console.groq.com). 🙂');
     chatHistory.pop();
+    tampilkanKolomKey();   // pastikan kolom input muncul
     return;
   }
 
@@ -129,7 +162,7 @@ async function kirimPesan(text) {
 // Pesan error yang sopan sesuai status
 function pesanError(status) {
   if (status === 401 || status === 403)
-    return 'API Key Groq-nya kayaknya salah atau nggak valid. Cek lagi di kolom atas ya. Kalau darurat, hubungi 113/112.';
+    return 'API Key Groq-nya kayaknya salah atau nggak valid. Klik "Ganti" di atas, lalu isi key yang benar. Kalau darurat, hubungi 113/112.';
   if (status === 429)
     return 'Server AI lagi rame (kena rate limit). Tunggu sebentar, lalu coba lagi. Kalau darurat, jangan nunggu — hubungi 113/112 sekarang.';
   if (status >= 500)

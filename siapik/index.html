@@ -4,11 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0d0f12" />
+  <meta name="color-scheme" content="dark" />
   <title>SIAPIK — Peta Kebakaran Hutan &amp; Lahan Indonesia</title>
+  <meta name="description" content="Peta interaktif titik api kebakaran hutan & lahan Indonesia: cuaca real-time, laporan warga, statistik, dan asisten AI. Web statis, bisa di-install sebagai PWA." />
+  <meta name="keywords" content="kebakaran hutan, karhutla, titik api, hotspot, Indonesia, peta, cuaca, PWA" />
+  <meta name="author" content="Nasrul Aja" />
+
+  <!-- Open Graph (preview saat dibagikan) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="🔥 SIAPIK — Peta Kebakaran Hutan & Lahan Indonesia" />
+  <meta property="og:description" content="Peta interaktif titik api, cuaca real-time, laporan warga, dan asisten AI. Web statis + PWA." />
+  <meta property="og:image" content="assets/icons/icon.svg" />
+  <meta property="og:locale" content="id_ID" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="🔥 SIAPIK — Peta Kebakaran Hutan & Lahan Indonesia" />
+  <meta name="twitter:description" content="Peta interaktif titik api, cuaca real-time, laporan warga, dan asisten AI." />
+  <meta name="twitter:image" content="assets/icons/icon.svg" />
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="assets/icons/icon.svg" />
+  <link rel="apple-touch-icon" href="assets/icons/icon.svg" />
 
   <!-- Leaflet CSS (dari CDN) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -105,12 +121,20 @@
       <button class="modal-close" data-close="modal-chat">&times;</button>
       <h2>Tanya SIAPIK</h2>
 
-      <!-- Kolom API Key Groq (disimpan di localStorage, TIDAK di kode) -->
-      <label class="key-field">
-        API Key Groq
-        <input type="password" id="groq-key" placeholder="gsk_... (disimpan di browser kamu)" autocomplete="off" />
-      </label>
-      <p class="muted key-hint">Dapatkan gratis di <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com</a>. Key hanya tersimpan di browser ini.</p>
+      <!-- KEADAAN A: belum ada key -> kolom input -->
+      <div id="key-form" class="key-box">
+        <label class="key-field">
+          API Key Groq
+          <input type="password" id="groq-key" placeholder="gsk_..." autocomplete="off" />
+        </label>
+        <p class="muted key-hint">Gratis di <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com</a>. Key hanya tersimpan di browser ini.</p>
+      </div>
+
+      <!-- KEADAAN B: sudah ada key -> disembunyikan -->
+      <div id="key-saved" class="key-box key-saved" hidden>
+        <span class="key-ok">✅ API Key Groq tersimpan</span>
+        <button type="button" id="btn-ganti-key" class="btn btn-ghost btn-sm">Ganti</button>
+      </div>
 
       <div id="chat-log" class="chat-log">
         <div class="chat-msg bot">Halo! Aku asisten kebakaran berbasis AI. Tanya apa saja, misalnya "kebakaran dekat rumah harus gimana?".</div>

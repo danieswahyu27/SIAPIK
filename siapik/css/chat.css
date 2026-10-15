@@ -43,13 +43,13 @@
   color: var(--text);
 }
 
-/* Kolom API Key Groq */
-.key-field {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-}
+/* Info kecil di atas chat */
+.key-hint { margin: 0 0 10px; font-size: 0.78rem; }
+.key-hint a { color: var(--primary); }
+
+/* Kotak API key */
+.key-box { margin-bottom: 10px; }
+.key-field { display: block; font-size: 0.8rem; color: var(--text-muted); }
 .key-field input {
   width: 100%;
   margin-top: 4px;
@@ -61,8 +61,11 @@
   font-family: monospace;
 }
 .key-field input:focus { outline: none; border-color: var(--primary); }
-.key-hint { margin: 0 0 10px; }
-.key-hint a { color: var(--primary); }
+
+/* KEADAAN B: key tersimpan */
+.key-saved { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.key-ok { font-size: 0.8rem; color: var(--success, #4ade80); }
+.btn-sm { padding: 4px 10px; font-size: 0.78rem; }
 
 /* Loading indicator (tiga titik berdenyut) */
 .chat-loading { display: flex; gap: 4px; align-items: center; padding: 12px; }

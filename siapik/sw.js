@@ -6,7 +6,7 @@
       supaya browser tidak menyajikan versi lama.
    ============================================ */
 
-const CACHE_NAME = 'siapik-v3';
+const CACHE_NAME = 'siapik-v6';
 const ASSETS = [
   './',
   './index.html',
