@@ -1,0 +1,19 @@
+{
+  "name": "SIAPIK — Peta Kebakaran Hutan & Lahan",
+  "short_name": "SIAPIK",
+  "description": "Peta interaktif titik api kebakaran hutan/lahan Indonesia, info cuaca, laporan warga, dan chatbot.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0f12",
+  "theme_color": "#ff7a00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

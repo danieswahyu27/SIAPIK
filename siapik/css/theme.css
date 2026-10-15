@@ -1,0 +1,29 @@
+/* ============================================
+   SIAPIK — Tema: "Nightwatch"
+   Ganti nilai di :root saja untuk ubah tema.
+   ============================================ */
+:root {
+  /* Warna dasar */
+  --bg:            #0d0f12;   /* latar utama */
+  --surface:       #16191f;   /* kartu/panel */
+  --surface-2:     #1d222a;   /* kartu lebih terang (hover/input) */
+  --border:        #262b33;
+  --text:          #e8eaed;
+  --text-muted:    #8b929c;
+
+  /* Aksen */
+  --primary:       #ff7a00;   /* oranye utama */
+  --primary-hover: #ff9633;
+  --accent:        #ffb347;   /* oranye terang (highlight/statistik) */
+  --danger:        #ff3b3b;   /* level bahaya tinggi */
+
+  /* Level keparahan (dipakai marker, badge, legenda) */
+  --level-berat:   #ff3b3b;   /* merah  */
+  --level-sedang:  #ff7a00;   /* oranye */
+  --level-ringan:  #ffd23b;   /* kuning */
+  --user-dot:      #2f9bff;   /* biru untuk "Lokasi Saya" */
+  --radius:        12px;
+  --radius-sm:     8px;
+  --shadow:        0 8px 24px rgba(0, 0, 0, 0.45);
+  --font:          system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

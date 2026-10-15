@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "provinsi": "Riau",
+    "lokasi": "Kab. Pelalawan",
+    "lat": 0.4,
+    "lon": 101.8,
+    "tingkat": "berat",
+    "waktu": "2026-10-15T08:15:00Z",
+    "luas_ha": 45,
+    "sumber": "https://firms.modaps.eosdis.nasa.gov/map/"
+  },
+  {
+    "id": 2,
+    "provinsi": "Kalimantan Tengah",
+    "lokasi": "Kab. Pulang Pisau",
+    "lat": -2.7,
+    "lon": 113.9,
+    "tingkat": "sedang",
+    "waktu": "2026-10-14T14:40:00Z",
+    "luas_ha": 18,
+    "sumber": "https://firms.modaps.eosdis.nasa.gov/map/"
+  },
+  {
+    "id": 3,
+    "provinsi": "Sumatera Selatan",
+    "lokasi": "Kab. Ogan Komering Ilir",
+    "lat": -3.2,
+    "lon": 105.0,
+    "tingkat": "ringan",
+    "waktu": "2026-10-13T06:20:00Z",
+    "luas_ha": 5,
+    "sumber": ""
+  },
+  {
+    "id": 4,
+    "provinsi": "Riau",
+    "lokasi": "Kab. Siak",
+    "lat": 0.8,
+    "lon": 102.0,
+    "tingkat": "sedang",
+    "waktu": "2026-10-13T11:00:00Z",
+    "luas_ha": 22,
+    "sumber": "https://www.bnpb.go.id/"
+  },
+  {
+    "id": 5,
+    "provinsi": "Papua",
+    "lokasi": "Kab. Merauke",
+    "lat": -8.5,
+    "lon": 140.4,
+    "tingkat": "ringan",
+    "waktu": "2026-10-04T12:45:00Z",
+    "luas_ha": 8
+  }
+]
+

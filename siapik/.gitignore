@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Jangan pernah commit file berisi API key / rahasia
+.env
+*.env
+secrets.json
