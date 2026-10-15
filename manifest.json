@@ -1,7 +1,8 @@
 {
   "name": "SIAPIK — Peta Kebakaran Hutan & Lahan",
   "short_name": "SIAPIK",
-  "description": "Peta interaktif titik api kebakaran hutan/lahan Indonesia, info cuaca, laporan warga, dan chatbot.",
+  "description": "Peta interaktif titik api kebakaran hutan/lahan Indonesia, info cuaca, laporan warga, dan chatbot. Dikembangkan oleh Muhammad Arif Nasrullah (XI RPL 2, SMK Negeri 2 Singosari, Malang).",
+  "author": "Muhammad Arif Nasrullah",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

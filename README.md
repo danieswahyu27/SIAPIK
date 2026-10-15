@@ -134,5 +134,23 @@ Dirilis di bawah [MIT License](LICENSE).
 
 ---
 
+<p align="center">
+  <b>Dikembangkan oleh <a href="https://github.com/nasrulaja">Muhammad Arif Nasrullah</a></b><br>
+  XI RPL 2 · SMK Negeri 2 Singosari · Malang, Jawa Timur, Indonesia 🇮🇩
+</p>
+
+---
+
+## 👨‍💻 Pengembang
+
+| | |
+|---|---|
+| **Nama** | Muhammad Arif Nasrullah |
+| **Kelas** | XI RPL 2 |
+| **Sekolah** | SMK Negeri 2 Singosari |
+| **Lokasi** | Malang, Jawa Timur, Indonesia 🇮🇩 |
+| **GitHub** | [@nasrulaja](https://github.com/nasrulaja) |
+
 <p align="center">Dibuat dengan ❤️ untuk kesiapsiagaan kebakaran Indonesia 🇮🇩</p>
+
 
