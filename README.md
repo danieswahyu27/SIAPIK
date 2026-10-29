@@ -84,6 +84,8 @@ siapik/
 
 ## 🚀 Cara Menjalankan
 
+Buka website melalui link berikut: https://siapiklatika.netlify.app/
+
 Karena memuat `data/*.json` via `fetch`, **jalankan lewat server lokal** (bukan buka `file://`):
 
 ```bash
