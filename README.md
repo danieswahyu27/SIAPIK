@@ -138,7 +138,7 @@ Dirilis di bawah [MIT License](LICENSE).
 
 | | | | |
 |---|---|---|---|
-| **Nama** | Muhammad Arif Nasrullah | **Nama** | Muhammad Arif Nasrullah |
+| **Nama** | Muhammad Arif Nasrullah | **Nama** | Danies Wahyu Hidayat |
 | **Kelas** | XI RPL 2 | **Kelas** | XI RPL 1 |
 | **Sekolah** | SMK Negeri 2 Singosari | **Sekolah** | SMK Negeri 2 Singosari |
 | **Lokasi** | Malang, Jawa Timur, Indonesia 🇮🇩 | **Lokasi** | Malang, Jawa Timur, Indonesia 🇮🇩 |
